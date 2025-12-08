@@ -1,6 +1,16 @@
 # Changelog
 
 
+
+## v1.0.1 (2025-12-08)
+
+#### :bug: Bug Fix
+* `ember-router-helpers`
+  * [#314](https://github.com/adopted-ember-addons/ember-router-helpers/pull/314) fix: Importing inject from @ember/service is deprecated. ([@johanrd](https://github.com/johanrd))
+
+#### Committers: 1
+- [@johanrd](https://github.com/johanrd)
+
 ## v1.0.0 (2022-11-10)
 
 #### :boom: Breaking Change
