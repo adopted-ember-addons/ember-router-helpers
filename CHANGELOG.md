@@ -1,3 +1,33 @@
+# Changelog
+
+
+
+## v1.0.1 (2025-12-08)
+
+#### :bug: Bug Fix
+* `ember-router-helpers`
+  * [#314](https://github.com/adopted-ember-addons/ember-router-helpers/pull/314) fix: Importing inject from @ember/service is deprecated. ([@johanrd](https://github.com/johanrd))
+
+#### Committers: 1
+- [@johanrd](https://github.com/johanrd)
+
+## v1.0.0 (2022-11-10)
+
+#### :boom: Breaking Change
+* `ember-router-helpers`, `test-app`
+  * [#293](https://github.com/rwjblue/ember-router-helpers/pull/293) Convert to addon v2 and bump to ember 3.28 ([@ctjhoa](https://github.com/ctjhoa))
+
+#### :rocket: Enhancement
+* [#269](https://github.com/rwjblue/ember-router-helpers/pull/269) Implement `replace-with` ([@boris-petrov](https://github.com/boris-petrov))
+
+#### :memo: Documentation
+* [#273](https://github.com/rwjblue/ember-router-helpers/pull/273) Use {{on}} modifier instead of onclick in docs ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 3
+- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))
+- Camille TJHOA ([@ctjhoa](https://github.com/ctjhoa))
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
 ## v0.4.0 (2020-05-19)
 
 #### :boom: Breaking Change
