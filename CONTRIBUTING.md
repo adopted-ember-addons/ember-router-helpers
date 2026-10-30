@@ -2,23 +2,24 @@
 
 ## Installation
 
-* `git clone https://github.com/rwjblue/ember-router-helpers.git
+* `git clone https://github.com/adopted-ember-addons/ember-router-helpers.git`
 * `cd ember-router-helpers`
-* `yarn install`
+* `pnpm install`
 
 ## Linting
 
-* `yarn lint`
-* `yarn lint:fix`
+* `pnpm lint`
+* `pnpm lint:fix`
+
+## Building the addon
+
+* `pnpm build`
 
 ## Running tests
 
-* `yarn test` – Runs the test suite on the current Ember version
-* `yarn test:watch` – Runs the test suite in "watch mode"
+* `pnpm test` – Runs the test suite on the current Ember version
 
-## Running the test application
+## Running the demo application
 
-* `yarn start`
-* Visit the test application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).
+* `pnpm start`
+* Visit the demo application at the URL printed by Vite, and the tests at `/tests/`.
