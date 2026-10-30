@@ -27,6 +27,60 @@ const compatDeps = {
 export default {
   scenarios: [
     {
+      name: 'ember-lts-3.28',
+      npm: {
+        devDependencies: {
+          'ember-source': '~3.28.0',
+          ...compatDeps,
+          // ember-source 3.28 needs project.bowerDependencies(), removed in ember-cli 5
+          'ember-cli': '~4.12.0',
+        },
+      },
+      env: {
+        ENABLE_COMPAT_BUILD: true,
+      },
+      files: compatFiles,
+    },
+    {
+      name: 'ember-lts-4.4',
+      npm: {
+        devDependencies: {
+          'ember-source': '~4.4.0',
+          ...compatDeps,
+        },
+      },
+      env: {
+        ENABLE_COMPAT_BUILD: true,
+      },
+      files: compatFiles,
+    },
+    {
+      name: 'ember-lts-4.8',
+      npm: {
+        devDependencies: {
+          'ember-source': '~4.8.0',
+          ...compatDeps,
+        },
+      },
+      env: {
+        ENABLE_COMPAT_BUILD: true,
+      },
+      files: compatFiles,
+    },
+    {
+      name: 'ember-lts-4.12',
+      npm: {
+        devDependencies: {
+          'ember-source': '~4.12.0',
+          ...compatDeps,
+        },
+      },
+      env: {
+        ENABLE_COMPAT_BUILD: true,
+      },
+      files: compatFiles,
+    },
+    {
       name: 'ember-lts-5.8',
       npm: {
         devDependencies: {

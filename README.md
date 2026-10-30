@@ -5,10 +5,8 @@
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
-* ember-auto-import >= 2
-* Node.js v12 or above
+* Ember.js v3.28 or above
+* Embroider or ember-auto-import >= 2
 
 
 Installation
