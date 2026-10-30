@@ -122,7 +122,7 @@ module('helper:route-params', function () {
 
       await render(hbs`
       {{#let (route-params 'parent.child') as |routeParams|}}
-        <button {{action routeParams.transitionTo}}></button>
+        <button {{on "click" routeParams.transitionTo}}></button>
       {{/let}}`);
 
       await click('button');
@@ -215,7 +215,7 @@ module('helper:route-params', function () {
 
       await render(hbs`
       {{#let (route-params 'parent.child') as |routeParams|}}
-        <button {{action routeParams.replaceWith}}></button>
+        <button {{on "click" routeParams.replaceWith}}></button>
       {{/let}}`);
 
       await click('button');
