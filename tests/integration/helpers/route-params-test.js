@@ -96,7 +96,7 @@ module('helper:route-params', function () {
 
       await render(hbs`
       {{#let (route-params 'parent.child') as |routeParams|}}
-        {{routeParams.transitionTo}}
+        {{if routeParams.transitionTo "rendered"}}
       {{/let}}`);
     });
 
@@ -189,7 +189,7 @@ module('helper:route-params', function () {
 
       await render(hbs`
       {{#let (route-params 'parent.child') as |routeParams|}}
-        {{routeParams.replaceWith}}
+        {{if routeParams.replaceWith "rendered"}}
       {{/let}}`);
     });
 
