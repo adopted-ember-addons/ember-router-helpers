@@ -161,7 +161,7 @@ module('helper:route-params', function () {
       element.addEventListener('click', (event) => {
         assert.ok(
           event.defaultPrevented,
-          'default should have been prevented on click event'
+          'default should have been prevented on click event',
         );
       });
 
@@ -271,7 +271,7 @@ module('helper:route-params', function () {
           <a href="{{routeParams.url}}" class="{{if routeParams.isActive 'active' 'inactive'}}">Blah</a>
         {{/let}}
         {{outlet}}
-        `
+        `,
       );
     });
 
@@ -298,11 +298,11 @@ module('helper:route-params', function () {
           model() {
             return slowModelDeferred.promise;
           }
-        }
+        },
       );
       this.owner.register(
         'template:foo-loading',
-        hbs`<div class="loading-spinner"></div>`
+        hbs`<div class="loading-spinner"></div>`,
       );
 
       await visit('/');

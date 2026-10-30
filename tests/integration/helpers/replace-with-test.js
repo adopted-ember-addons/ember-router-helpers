@@ -16,13 +16,13 @@ module('replace-with', function (hooks) {
         replaceWith() {
           invocationArguments.push([...arguments]);
         }
-      }
+      },
     );
   });
 
   test('it will call replaceWith on the router service when invoked', async function (assert) {
     await render(
-      hbs`<button onclick={{replace-with 'parent.child'}}></button>`
+      hbs`<button onclick={{replace-with 'parent.child'}}></button>`,
     );
 
     await click('button');
@@ -34,7 +34,7 @@ module('replace-with', function (hooks) {
     assert.expect(2);
 
     await render(
-      hbs`<button onclick={{replace-with 'parent.child'}}></button>`
+      hbs`<button onclick={{replace-with 'parent.child'}}></button>`,
     );
 
     this.element.addEventListener('click', (event) => {

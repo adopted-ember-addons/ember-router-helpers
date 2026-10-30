@@ -39,7 +39,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'is-active is not true when curren route is different from target route'
+        'is-active is not true when curren route is different from target route',
       );
 
       router.set('currentURL', '/bar');
@@ -49,7 +49,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'true',
-        'is-active is true now when URL has changed'
+        'is-active is true now when URL has changed',
       );
 
       router.set('currentURL', '/foo');
@@ -59,7 +59,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'is-active is false when curren route has changed'
+        'is-active is false when curren route has changed',
       );
     });
   });
@@ -77,7 +77,7 @@ module('helper:is-active', function () {
       this.owner.register('router:main', Router);
       this.owner.register(
         'template:application',
-        hbs`{{is-active 'foo'}}{{outlet}}`
+        hbs`{{is-active 'foo'}}{{outlet}}`,
       );
     });
 
@@ -87,7 +87,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'is-active is not true when curren route is different from target route'
+        'is-active is not true when curren route is different from target route',
       );
 
       await visit('/foo');
@@ -95,7 +95,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'true',
-        'is-active is true now when URL has changed'
+        'is-active is true now when URL has changed',
       );
 
       await visit('/');
@@ -103,7 +103,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'is-active is false when curren route has changed'
+        'is-active is false when curren route has changed',
       );
     });
 
@@ -116,11 +116,11 @@ module('helper:is-active', function () {
           model() {
             return slowModelDeferred.promise;
           }
-        }
+        },
       );
       this.owner.register(
         'template:foo-loading',
-        hbs`<div class="loading-spinner"></div>`
+        hbs`<div class="loading-spinner"></div>`,
       );
 
       await visit('/');
@@ -128,7 +128,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'precond - is-active is not true when on index route'
+        'precond - is-active is not true when on index route',
       );
 
       let visitPromise = visit('/foo');
@@ -138,7 +138,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'false',
-        'is-active is not true when on the loading substate'
+        'is-active is not true when on the loading substate',
       );
 
       slowModelDeferred.resolve();
@@ -148,7 +148,7 @@ module('helper:is-active', function () {
       assert.strictEqual(
         this.element.textContent,
         'true',
-        'is-active is true now that model hook has fully resolved'
+        'is-active is true now that model hook has fully resolved',
       );
     });
   });

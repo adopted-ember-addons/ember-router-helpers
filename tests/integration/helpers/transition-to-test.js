@@ -16,13 +16,13 @@ module('transition-to', function (hooks) {
         transitionTo() {
           invocationArguments.push([...arguments]);
         }
-      }
+      },
     );
   });
 
   test('it will call transitionTo on the router service when invoked', async function (assert) {
     await render(
-      hbs`<button onclick={{transition-to 'parent.child'}}></button>`
+      hbs`<button onclick={{transition-to 'parent.child'}}></button>`,
     );
 
     await click('button');
@@ -34,7 +34,7 @@ module('transition-to', function (hooks) {
     assert.expect(2);
 
     await render(
-      hbs`<button onclick={{transition-to 'parent.child'}}></button>`
+      hbs`<button onclick={{transition-to 'parent.child'}}></button>`,
     );
 
     this.element.addEventListener('click', (event) => {

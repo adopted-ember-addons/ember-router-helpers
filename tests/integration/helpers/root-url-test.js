@@ -15,7 +15,7 @@ module('Integration | Helper | root-url', function (hooks) {
     await render(hbs`<a href="{{root-url}}profile">Profile</a>`);
     assert.equal(
       this.element.querySelector('a').getAttribute('href'),
-      '/profile'
+      '/profile',
     );
   });
 });
