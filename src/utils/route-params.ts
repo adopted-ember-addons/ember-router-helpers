@@ -1,8 +1,16 @@
-import handleQueryParams from './handle-query-params';
-import trackActiveRoute from './track-active-route';
+import type RouterService from '@ember/routing/router-service';
+import type Transition from '@ember/routing/transition';
+import handleQueryParams, { type UrlForArgs } from './handle-query-params.ts';
+import trackActiveRoute from './track-active-route.ts';
 
 export default class RouteParams {
-  constructor(router, params) {
+  _router: RouterService;
+  _inputParams: UrlForArgs;
+  _transitionTo: ((maybeEvent?: Event) => Transition) | undefined;
+  _replaceWith: (() => Transition) | undefined;
+  _processedParams: UrlForArgs | undefined;
+
+  constructor(router: RouterService, params: UrlForArgs) {
     this._router = router;
     this._inputParams = params;
     this._transitionTo = undefined;
@@ -10,19 +18,19 @@ export default class RouteParams {
     this._processedParams = undefined;
   }
 
-  get isActive() {
+  get isActive(): boolean {
     trackActiveRoute(this._router);
 
     return this._router.isActive(...this._params);
   }
 
-  get url() {
+  get url(): string {
     return this._router.urlFor(...this._params);
   }
 
-  get transitionTo() {
+  get transitionTo(): (maybeEvent?: Event) => Transition {
     if (this._transitionTo === undefined) {
-      this._transitionTo = (maybeEvent) => {
+      this._transitionTo = (maybeEvent?: Event) => {
         if (
           maybeEvent !== undefined &&
           typeof maybeEvent.preventDefault === 'function'
@@ -36,7 +44,7 @@ export default class RouteParams {
     return this._transitionTo;
   }
 
-  get replaceWith() {
+  get replaceWith(): () => Transition {
     if (this._replaceWith === undefined) {
       this._replaceWith = () => {
         return this._router.replaceWith(...this._params);
@@ -46,7 +54,7 @@ export default class RouteParams {
     return this._replaceWith;
   }
 
-  get _params() {
+  get _params(): UrlForArgs {
     if (!this._processedParams) {
       this._processedParams = handleQueryParams(this._inputParams);
     }

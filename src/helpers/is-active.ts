@@ -1,16 +1,25 @@
 import * as emberService from '@ember/service';
 import Helper from '@ember/component/helper';
-import handleQueryParams from '../utils/handle-query-params';
-import trackActiveRoute from '../utils/track-active-route';
+import type RouterService from '@ember/routing/router-service';
+import handleQueryParams, {
+  type RouteArgs,
+} from '../utils/handle-query-params.ts';
+import trackActiveRoute from '../utils/track-active-route.ts';
 
 const service = emberService.service ?? emberService.inject;
-export default class IsActiveHelper extends Helper {
-  @service router;
 
-  compute(_params) {
+export interface IsActiveSignature {
+  Args: { Positional: RouteArgs };
+  Return: boolean;
+}
+
+export default class IsActiveHelper extends Helper<IsActiveSignature> {
+  @service declare router: RouterService;
+
+  compute(_params: RouteArgs): boolean {
     trackActiveRoute(this.router);
 
-    let params = handleQueryParams(_params);
+    const params = handleQueryParams(_params);
 
     return this.router.isActive(...params);
   }
